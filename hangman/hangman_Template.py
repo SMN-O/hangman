@@ -10,7 +10,7 @@ class Hangman:
     A Hangman Game that asks the user for a letter and checks if it is in the word.
     It starts with a default number of lives and a random word from the word_list.
 
-    
+ 
     Parameters:
     ----------
     word_list: list
@@ -40,9 +40,29 @@ class Hangman:
     ask_letter()
         Asks the user for a letter.
     '''
+
+
+
+
+
     def __init__(self, word_list, num_lives=5):
         # TODO 2: Initialize the attributes as indicated in the docstring
+        word_list = ['Apples', 'Pears', 'Oranges', 'Peaches', 'Bananas']
+        word = random.choice(word_list)
+
         # TODO 2: Print two message upon initialization:
+        print(word_list)
+        print(word)
+        
+        guess = input("Please enter a single letter: ")
+        if len(guess) > 1:
+            print("Please enter a single letter")
+        elif guess in word:
+            print("Good guess")
+        else:
+            print("Oops")
+
+
         # 1. "The mistery word has {num_letters} characters"
         # 2. {word_guessed}
         pass
