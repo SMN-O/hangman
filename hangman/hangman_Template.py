@@ -54,13 +54,6 @@ class Hangman:
         print(word_list)
         print(word)
         
-        guess = input("Please enter a single letter: ")
-        if len(guess) > 1:
-            print("Please enter a single letter")
-        elif guess in word:
-            print("Good guess")
-        else:
-            print("Oops")
 
 
         # 1. "The mistery word has {num_letters} characters"
@@ -79,6 +72,8 @@ class Hangman:
             The letter to be checked
 
         '''
+        guess = guess.lower()
+        
         # TODO 3: Check if the letter is in the word. TIP: You can use the lower() method to convert the letter to lowercase
         # TODO 3: If the letter is in the word, replace the '_' in the word_guessed list with the letter
         # TODO 3: If the letter is in the word, the number of UNIQUE letters in the word that have not been guessed yet has to be reduced by 1
@@ -93,6 +88,22 @@ class Hangman:
         2. If the character is a single character
         If it passes both checks, it calls the check_letter method.
         '''
+        while True:
+            guess = input("Please enter a single letter: ")
+            if guess.isalpha():
+                break
+            else:
+                print("Invalid letter. Please, enter a single alphabetical character.")
+
+        if guess in word:
+            print("Good guess! {guess} is in the word.")
+        else:
+            print("Sorry, {guess} is not in the word. Try again.")
+
+        check_guess(word, guess)
+
+        ask_for_input()
+
         # TODO 1: Ask the user for a letter iteratively until the user enters a valid letter
         # TODO 1: Assign the letter to a variable called `letter`
         # TODO 1: The letter has to comply with the following criteria: It has to be a single character. If it is not, print "Please, enter just one character"

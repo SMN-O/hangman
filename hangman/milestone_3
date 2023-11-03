@@ -1,0 +1,24 @@
+def check_guess(word, guess):
+    guess = guess.lower()
+
+    
+
+def ask_for_input():
+    while True:
+        guess = input("Please enter a single letter: ")
+        if guess.isalpha():
+            break
+        else:
+            print("Invalid letter. Please, enter a single alphabetical character.")
+
+    if guess in word:
+        print("Good guess! {guess} is in the word.")
+    else:
+        print("Sorry, {guess} is not in the word. Try again.")
+
+    check_guess(word, guess)
+
+ask_for_input()
+
+
+
