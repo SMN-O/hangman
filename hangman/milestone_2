@@ -1,18 +1,13 @@
 import random
 
-
 word_list = ['Apples', 'Pears', 'Oranges', 'Peaches', 'Bananas']
-# Display the list
+word = random.choice(word_list)
 print(word_list)
-
-random_word = random.choice(word_list)
-word = random_word
 print(word)
 
-guess = input("Please enter a single letter: ")
-if len(guess) > 1:
-    print("Please enter a single letter")
-elif guess in word:
-    print("Good guess")
+guess = input("Please guess a single letter: ")
+if len(guess) == 1 and guess.isalpha():
+    print("Good guess!")
 else:
-    print("Oops")
+    print("Oops.")
+  

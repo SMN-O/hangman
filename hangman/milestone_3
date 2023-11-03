@@ -1,24 +1,28 @@
-def check_guess(word, guess):
+
+import random 
+
+word_list = ['Apples', 'Pears', 'Oranges', 'Peaches', 'Bananas']
+word = random.choice(word_list)
+print(word_list)
+print(word)
+
+
+def check_guess(guess):
     guess = guess.lower()
-
-    
-
-def ask_for_input():
-    while True:
-        guess = input("Please enter a single letter: ")
-        if guess.isalpha():
-            break
-        else:
-            print("Invalid letter. Please, enter a single alphabetical character.")
-
     if guess in word:
         print("Good guess! {guess} is in the word.")
     else:
         print("Sorry, {guess} is not in the word. Try again.")
 
-    check_guess(word, guess)
+def ask_for_input():
+    while True:
+        guess = input("Please guess a single letter: ")
+        if guess.isalpha():
+            break
+        else:
+            print("Invalid")
+    check_guess(guess)
 
 ask_for_input()
 
-
-
+    
